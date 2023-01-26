@@ -98,10 +98,12 @@ export const HamburgerListButtonWrapperStyled = styled.li`
   height: fit-content;
   display: flex;
   justify-content: space-evenly;
-  align-items: flex-start;
+  align-items: center;
+  padding: 1.5rem 0;
 
   @media screen and (min-width: 1024px) {
-    width: fit-content;
+    order: 4;
+    width: 6rem;
     height: 100%;
   }
 `;
@@ -135,4 +137,40 @@ export const HamburgerListItemStyled = styled.li`
     width: 12rem;
     height: 100%;
   }
+`;
+
+export const ThemeSVGStyled = styled.svg`
+  display: flex;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+`;
+export const ThemePathStyled = styled.path`
+  display: flex;
+  transform: scale(0.56);
+  fill: color.$text-color;
+  stroke: color.$text-color;
+  stroke-width: 0.1rem;
+`;
+export const DarkThemeSVGStyled = styled.svg`
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+`;
+export const DarkThemePathStyled = styled.path`
+  display: none;
+  transform: scale(0.5) rotate(-45deg) translate(-50%, -35%);
+  transform-origin: center;
+  fill: color.$text-color;
+  stroke: color.$text-color;
+  stroke-width: 0.1rem;
 `;
