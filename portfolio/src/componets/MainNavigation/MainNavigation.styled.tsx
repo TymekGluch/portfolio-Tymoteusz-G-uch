@@ -9,6 +9,11 @@ export const MainNavigationStyled = styled.header`
   align-items: center;
   border-bottom: solid 2px ${COLORS.PRIMARY_ITEM_COLOR};
   background-color: ${COLORS.BACKGROUND_COLOR};
+
+  @media screen and (min-width: 1024px) {
+    padding: 0 10vw;
+    justify-content: space-between;
+  }
 `;
 
 export const MainHeadingStyled = styled.h1`
