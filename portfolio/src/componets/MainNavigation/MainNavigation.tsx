@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { HamburgerMenu } from '../HamburgerMenu';
 import { MainHeadingStyled, MainNavigationStyled } from './MainNavigation.styled';
