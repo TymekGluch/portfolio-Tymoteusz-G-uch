@@ -1,4 +1,3 @@
-import { COLORS } from '@/consts/COLORS';
 import styled from 'styled-components';
 
 export const SwitchInputStyled = styled.input`
@@ -19,7 +18,7 @@ export const SwitchChildrenWrapperStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: ${COLORS.BACKGROUND_COLOR};
+  background-color: ${({ theme }) => theme.BACKGROUND_COLOR};
   overflow: hidden;
   transition: transform 200ms;
   position: relative;
@@ -30,7 +29,7 @@ export const SwitchLabelStyled = styled.label`
   height: 2rem;
   border-radius: 2rem;
   border: none;
-  background-color: ${COLORS.PRIMARY_ITEM_COLOR};
+  background-color: ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -41,7 +40,7 @@ export const SwitchLabelStyled = styled.label`
     opacity: 50%;
   }
 
-  ${SwitchInputStyled} + ${SwitchChildrenWrapperStyled} {
+  ${SwitchInputStyled}:checked + ${SwitchChildrenWrapperStyled} {
     transform: translateX(2rem);
   }
 `;

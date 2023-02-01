@@ -10,10 +10,16 @@ type SwitchProps = {
 
 const Switch: React.FC<SwitchProps> = ({ children, isChecked, handleChange }) => {
   return (
-    <SwitchLabelStyled>
-      <SwitchInputStyled type="checkbox" checked={isChecked} onChange={handleChange} />
+    <SwitchLabelStyled role="menuitemcheckbox">
+      <SwitchInputStyled
+        role="switch"
+        type="checkbox"
+        checked={isChecked}
+        aria-checked={isChecked}
+        onChange={handleChange}
+      />
 
-      <SwitchChildrenWrapperStyled>{children}</SwitchChildrenWrapperStyled>
+      <SwitchChildrenWrapperStyled aria-hidden="true">{children}</SwitchChildrenWrapperStyled>
     </SwitchLabelStyled>
   );
 };

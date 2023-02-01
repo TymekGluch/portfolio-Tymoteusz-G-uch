@@ -1,5 +1,3 @@
-import { COLORS } from '@/consts/COLORS';
-import Link from 'next/link';
 import styled from 'styled-components';
 
 export const HamburgerMenuStyled = styled.nav`
@@ -35,8 +33,8 @@ export const HamburgerButtonItemStyled = styled.div<{ isActivated: boolean }>`
   display: block;
   width: 75%;
   height: 0.4rem;
-  background-color: ${({ isActivated = false }) =>
-    isActivated ? 'transparent' : COLORS.PRIMARY_ITEM_COLOR};
+  background-color: ${({ isActivated = false, theme }) =>
+    isActivated ? 'transparent' : theme.PRIMARY_ITEM_COLOR};
   transition: background-color 100ms;
   border-radius: 24px;
 
@@ -45,7 +43,7 @@ export const HamburgerButtonItemStyled = styled.div<{ isActivated: boolean }>`
     display: flex;
     width: 100%;
     height: 0.4rem;
-    background-color: ${COLORS.PRIMARY_ITEM_COLOR};
+    background-color: ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
     transform-origin: center;
     transform: ${({ isActivated = false }) =>
       isActivated ? 'translate(0, 0%) rotate(45deg);' : 'translate(0, -180%)'};
@@ -58,7 +56,7 @@ export const HamburgerButtonItemStyled = styled.div<{ isActivated: boolean }>`
     display: flex;
     width: 100%;
     height: 0.4rem;
-    background-color: ${COLORS.PRIMARY_ITEM_COLOR};
+    background-color: ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
     transform: ${({ isActivated = false }) =>
       isActivated ? 'translate(0, -100%) rotate(-45deg);' : 'translate(0, 80%)'};
     transform-origin: center;
@@ -76,7 +74,7 @@ export const HamburgerListStyled = styled.ul<{ isOpen: boolean; isShow: boolean 
   height: fit-content;
   display: ${({ isShow = false }) => (isShow ? `flex` : `none`)};
   flex-direction: column;
-  border-bottom: solid 2px ${COLORS.PRIMARY_ITEM_COLOR};
+  border-bottom: solid 2px ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
   transition: transform 200ms linear;
   z-index: -1;
 
@@ -103,7 +101,7 @@ export const HamburgerListButtonWrapperStyled = styled.li`
 
   @media screen and (min-width: 1024px) {
     order: 4;
-    width: 6rem;
+    width: 12rem;
     height: 100%;
   }
 `;
@@ -119,17 +117,17 @@ export const HamburgerListItemStyled = styled.li`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: ${COLORS.TEXT_COLOR};
+    color: ${({ theme }) => theme.TEXT_COLOR};
     text-decoration: none;
 
     &:hover {
-      background-color: ${COLORS.PRIMARY_ITEM_COLOR};
-      color: #fff;
+      background-color: ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
+      color: ${({ theme }) => theme.SECONDARY_TEXT_COLOR};
     }
 
     &:active {
-      background-color: ${COLORS.PRIMARY_ITEM_COLOR};
-      color: #fff;
+      background-color: ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
+      color: ${({ theme }) => theme.SECONDARY_TEXT_COLOR};
     }
   }
 
@@ -139,8 +137,8 @@ export const HamburgerListItemStyled = styled.li`
   }
 `;
 
-export const ThemeSVGStyled = styled.svg`
-  display: flex;
+export const ThemeSVGStyled = styled.svg<{ isDisplayDarkTheme: boolean }>`
+  display: ${({ isDisplayDarkTheme = false }) => (isDisplayDarkTheme ? 'none' : 'flex')};
   height: 100%;
   width: 100%;
   position: absolute;
@@ -152,12 +150,12 @@ export const ThemeSVGStyled = styled.svg`
 export const ThemePathStyled = styled.path`
   display: flex;
   transform: scale(0.56);
-  fill: color.$text-color;
-  stroke: color.$text-color;
+  fill: black;
+  stroke: black;
   stroke-width: 0.1rem;
 `;
-export const DarkThemeSVGStyled = styled.svg`
-  display: none;
+export const DarkThemeSVGStyled = styled.svg<{ isDisplayDarkTheme: boolean }>`
+  display: ${({ isDisplayDarkTheme = false }) => (isDisplayDarkTheme ? 'flex' : 'none')};
   height: 100%;
   width: 100%;
   position: absolute;
@@ -167,10 +165,10 @@ export const DarkThemeSVGStyled = styled.svg`
   transform-origin: center center;
 `;
 export const DarkThemePathStyled = styled.path`
-  display: none;
+  display: flex;
   transform: scale(0.5) rotate(-45deg) translate(-50%, -35%);
   transform-origin: center;
-  fill: color.$text-color;
-  stroke: color.$text-color;
+  fill: ${({ theme }) => theme.SECONDARY_TEXT_COLOR};
+  stroke: ${({ theme }) => theme.SECONDARY_TEXT_COLOR};
   stroke-width: 0.1rem;
 `;
