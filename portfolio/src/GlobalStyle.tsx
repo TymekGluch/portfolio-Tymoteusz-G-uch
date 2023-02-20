@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: ${({ theme }) => (theme as typeof defaultTheme).BACKGROUND_COLOR};
-        overflow: hidden;
+        overflow-x: hidden;
         font-family: Montserrat;
     }
 `;

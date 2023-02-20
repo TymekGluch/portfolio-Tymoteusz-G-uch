@@ -4,14 +4,14 @@ const COLORS = {
   SECONDARY_TEXT_COLOR: '#ffffff',
   PRIMARY_ITEM_COLOR: '#4c35af',
   SECONDARY_ITEM_COLOR: '#161425',
-};
+} as const;
 
 const DARK_THEME_COLORS = {
   BACKGROUND_COLOR: '#0c0a1d',
   TEXT_COLOR: '#ffffff',
   PRIMARY_ITEM_COLOR: '#4c35af',
-  SECONDARY_ITEM_COLOR: '#161425',
   SECONDARY_TEXT_COLOR: '#ffffff',
-};
+  SECONDARY_ITEM_COLOR: '#161425',
+} as const;
 
 export { COLORS, DARK_THEME_COLORS };
