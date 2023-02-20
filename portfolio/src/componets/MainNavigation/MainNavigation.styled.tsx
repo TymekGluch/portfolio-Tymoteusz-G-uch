@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const MainNavigationStyled = styled.header`
+  position: relative;
   width: 100vw;
   height: 3.5rem;
   display: flex;
@@ -8,6 +9,7 @@ export const MainNavigationStyled = styled.header`
   align-items: center;
   border-bottom: solid 2px ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
   background-color: ${({ theme }) => theme.BACKGROUND_COLOR};
+  z-index: 1000;
 
   @media screen and (min-width: 1024px) {
     padding: 0 10vw;

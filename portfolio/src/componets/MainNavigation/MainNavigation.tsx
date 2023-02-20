@@ -8,8 +8,12 @@ const MainNavigation = () => (
     <MainHeadingStyled>TG</MainHeadingStyled>
 
     <HamburgerMenu>
-      <a href="/" role="menuitem">
+      <a href="/#about-me-section" role="menuitem">
         About me
+      </a>
+
+      <a href="/" role="menuitem">
+        Technolgies
       </a>
 
       <a href="/" role="menuitem">

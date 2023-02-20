@@ -1,3 +1,4 @@
+import { COLORS } from '@/consts';
 import styled from 'styled-components';
 
 export const HamburgerMenuStyled = styled.nav`
@@ -68,7 +69,7 @@ export const HamburgerButtonItemStyled = styled.div<{ isActivated: boolean }>`
 export const HamburgerListStyled = styled.ul<{ isOpen: boolean; isShow: boolean }>`
   position: absolute;
   top: 3.5rem;
-  transform: translateY(${({ isOpen = false }) => (isOpen ? `0` : `-100%`)});
+  transform: scaleY(${({ isOpen = false }) => (isOpen ? `1` : `0`)});
   left: 0;
   width: 100vw;
   height: fit-content;
@@ -76,7 +77,8 @@ export const HamburgerListStyled = styled.ul<{ isOpen: boolean; isShow: boolean 
   flex-direction: column;
   border-bottom: solid 2px ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
   transition: transform 200ms linear;
-  z-index: -1;
+  transform-origin: top;
+  background-color: ${({ theme }) => theme.BACKGROUND_COLOR};
 
   @media screen and (min-width: 1024px) {
     width: 100%;

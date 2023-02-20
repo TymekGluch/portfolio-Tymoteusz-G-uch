@@ -8,6 +8,8 @@ type SwitchProps = {
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
+// TODO: add tag p with visibility="hidden"
+
 const Switch: React.FC<SwitchProps> = ({ children, isChecked, handleChange }) => {
   return (
     <SwitchLabelStyled role="menuitemcheckbox">
@@ -18,7 +20,6 @@ const Switch: React.FC<SwitchProps> = ({ children, isChecked, handleChange }) =>
         aria-checked={isChecked}
         onChange={handleChange}
       />
-
       <SwitchChildrenWrapperStyled aria-hidden="true">{children}</SwitchChildrenWrapperStyled>
     </SwitchLabelStyled>
   );

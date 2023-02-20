@@ -19,7 +19,9 @@ export default function App({ Component, pageProps }: AppProps) {
     <ThemeContext.Provider value={{ isDarkTheme, setIsDarkTheme }}>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
+
         <MainNavigation />
+
         <Component {...pageProps} />
       </ThemeProvider>
     </ThemeContext.Provider>
