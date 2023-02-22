@@ -20,4 +20,5 @@ export const MainNavigationStyled = styled.header`
 export const MainHeadingStyled = styled.h1`
   color: ${({ theme }) => theme.TEXT_COLOR};
   font-size: 2rem;
+  padding: 0 2rem;
 `;
