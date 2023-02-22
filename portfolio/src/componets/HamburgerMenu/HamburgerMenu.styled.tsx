@@ -102,6 +102,7 @@ export const HamburgerListButtonWrapperStyled = styled.li`
   padding: 1.5rem 0;
 
   @media screen and (min-width: 1024px) {
+    padding: 0 5rem 0 0;
     order: 4;
     width: 12rem;
     height: 100%;
@@ -134,7 +135,7 @@ export const HamburgerListItemStyled = styled.li`
   }
 
   @media screen and (min-width: 1024px) {
-    width: 12rem;
+    width: 10rem;
     height: 100%;
   }
 `;
