@@ -6,6 +6,7 @@ import React from 'react';
 import { COLORS, DARK_THEME_COLORS } from '@/consts';
 import { ThemeContext } from '@/contexts';
 import { DefaultTheme } from 'styled-components';
+import { Footer } from '@/componets/Footer';
 
 export default function App({ Component, pageProps }: AppProps) {
   const [isDarkTheme, setIsDarkTheme] = React.useState<boolean>(false);
@@ -23,6 +24,8 @@ export default function App({ Component, pageProps }: AppProps) {
         <MainNavigation />
 
         <Component {...pageProps} />
+
+        <Footer></Footer>
       </ThemeProvider>
     </ThemeContext.Provider>
   );
