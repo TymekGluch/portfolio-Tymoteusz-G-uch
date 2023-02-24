@@ -5,6 +5,7 @@ export const SectionStyled = styled.section<{
   width: string;
   height: string;
   border: string;
+  sectionBorderOnPC: string;
   borderRadius: string;
   isBackground: boolean;
   isCircle: boolean;
@@ -30,7 +31,7 @@ export const SectionStyled = styled.section<{
     position: ${({ isCircle }) => (isCircle ? 'relative' : 'static')};
     width: ${({ isCircle }) => (isCircle ? '250PX' : '100vw')};
     height: ${({ isCircle }) => (isCircle ? '250PX' : 'fit-content')};
-    border: ${({ isCircle, border }) => (isCircle ? border : '0')};
+    border: ${({ isCircle, sectionBorderOnPC }) => (isCircle ? sectionBorderOnPC : '0')};
     border-radius: ${({ isCircle, borderRadius }) => (isCircle ? '50%' : borderRadius)};
     margin-top: ${({ isCircle }) => (isCircle ? '7rem' : '')};
     padding: 3rem 2rem;

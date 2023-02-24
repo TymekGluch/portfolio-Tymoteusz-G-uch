@@ -13,7 +13,6 @@ const CircleKnownTechnologiesStyled = styled.ul`
   align-items: center;
   width: 80vw;
   max-height: max-content;
-  border: solid 2px ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
   color: ${({ theme }) => theme.TEXT_COLOR};
   margin-top: 2rem;
   padding: 4rem;

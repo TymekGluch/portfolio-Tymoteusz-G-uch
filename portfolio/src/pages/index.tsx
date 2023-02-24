@@ -11,7 +11,7 @@ const IndexPage: NextPage<{}> = ({}) => {
       <Section sectionId="about-me-section">
         <h2>hi, I am Tymoteusz Głuch.</h2>
         <strong>
-          <p>I work as front-end developer</p>
+          <p>I work as a front-end developer</p>
         </strong>
       </Section>
 

@@ -12,7 +12,7 @@ const MainNavigation = () => (
         About me
       </a>
 
-      <a href="/" role="menuitem">
+      <a href="/#technologies-section" role="menuitem">
         Technolgies
       </a>
 
