@@ -18,7 +18,10 @@ const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: ${({ theme }) => (theme as typeof defaultTheme).BACKGROUND_COLOR};
+        position: relative;
         overflow-x: hidden;
+        min-height: 100vh;
+        height: 100%;
         font-family: Montserrat;
     }
 `;

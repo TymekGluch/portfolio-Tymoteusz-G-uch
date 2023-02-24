@@ -1,13 +1,12 @@
 import styled from 'styled-components';
 
 export const MainNavigationStyled = styled.header`
-  position: relative;
+  position: fixed;
   width: 100vw;
   height: 3.5rem;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  border-bottom: solid 2px ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
   background-color: ${({ theme }) => theme.BACKGROUND_COLOR};
   z-index: 1000;
 

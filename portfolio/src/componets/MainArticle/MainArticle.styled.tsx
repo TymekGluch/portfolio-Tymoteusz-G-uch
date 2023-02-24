@@ -5,7 +5,8 @@ const MainArticleStyled = styled.article`
   flex-direction: column;
   align-items: center;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
+  height: 100%;
 `;
 
 export { MainArticleStyled };

@@ -7,6 +7,7 @@ type SectionProps = React.PropsWithChildren<{
   sectionWidth?: string;
   sectionHeight?: string;
   sectionBorder?: string;
+  sectionBorderOnPC?: string;
   sectionBorderRadius?: string;
   isBackgroundColor?: boolean;
   isCircleMod?: boolean;
@@ -19,6 +20,7 @@ const Section: React.FC<SectionProps> = ({
   sectionWidth = '80vw',
   sectionHeight = 'fit-content',
   sectionBorder = 'none',
+  sectionBorderOnPC = 'none',
   sectionBorderRadius = '0',
   isBackgroundColor = false,
   isCircleMod = false,
@@ -30,6 +32,7 @@ const Section: React.FC<SectionProps> = ({
       width={sectionWidth}
       height={sectionHeight}
       border={sectionBorder}
+      sectionBorderOnPC={sectionBorderOnPC}
       borderRadius={sectionBorderRadius}
       isBackground={isBackgroundColor}
       isCircle={isCircleMod}

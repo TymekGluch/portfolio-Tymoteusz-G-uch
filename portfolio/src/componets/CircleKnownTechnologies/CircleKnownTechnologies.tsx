@@ -18,7 +18,7 @@ const CircleKnownTechnologies: React.FC<CircleKnownTechnologiesProps> = ({ child
       sectionId="technologies-section"
       sectionWidth="100vw"
       sectionHeight="fit-content"
-      sectionBorder={`2px solid ${(theme as typeof defaultTheme).PRIMARY_ITEM_COLOR}`}
+      sectionBorderOnPC={`2px solid ${(theme as typeof defaultTheme).PRIMARY_ITEM_COLOR}`}
       isBackgroundColor
       isCircleMod
     >
