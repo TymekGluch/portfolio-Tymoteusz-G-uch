@@ -25,7 +25,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
         <Component {...pageProps} />
 
-        <Footer></Footer>
+        <Footer />
       </ThemeProvider>
     </ThemeContext.Provider>
   );

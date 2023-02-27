@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import React from 'react';
-import { FooterStyled, FooterLinkStyled, FooterWrapperStyled, LinkStyled } from './Footer.styled';
+import { FooterStyled, SVGLINKStyled, FooterWrapperStyled, LinkStyled } from './Footer.styled';
+import { FooterIcon } from './FooterData';
 
 type FooterProps = {};
 
@@ -8,33 +9,20 @@ const Footer: React.FC<FooterProps> = () => {
   return (
     <FooterStyled>
       <FooterWrapperStyled>
-        <FooterLinkStyled
-          href="https://www.linkedin.com/in/tymoteusz-g%C5%82uch-a30543267/"
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-        >
-          <Image src="/icons/linkedin.svg" alt="linkedin" width={50} height={50}></Image>
-        </FooterLinkStyled>
-
-        <FooterLinkStyled
-          href="https://useme.com/en/roles/contractor/tymoteuszgluch,257012/"
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-        >
-          <Image src="/icons/useme.png" alt="useme" width={50} height={50}></Image>
-        </FooterLinkStyled>
-
-        <FooterLinkStyled
-          href="https://github.com/TymekGluch"
-          target="_blank"
-          rel="nofollow noopener noreferrer"
-        >
-          <Image src="/icons/github.svg" alt="github" width={50} height={50}></Image>
-        </FooterLinkStyled>
+        {FooterIcon.map((icon) => (
+          <SVGLINKStyled
+            href={icon.LINK}
+            key={icon.NAME}
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+          >
+            <Image src={icon.IMAGE_LINK} alt={icon.NAME} width={50} height={50}></Image>
+          </SVGLINKStyled>
+        ))}
       </FooterWrapperStyled>
 
       <FooterWrapperStyled>
-        <LinkStyled href="">
+        <LinkStyled href="/">
           <Image src="/icons/PrivacyPolicy.svg" alt="cookies" width={20} height={20} />
 
           <strong>
@@ -42,7 +30,7 @@ const Footer: React.FC<FooterProps> = () => {
           </strong>
         </LinkStyled>
 
-        <LinkStyled href="">
+        <LinkStyled href="/">
           <Image src="/icons/cookies.svg" alt="cookies" width={20} height={20} />
 
           <strong>

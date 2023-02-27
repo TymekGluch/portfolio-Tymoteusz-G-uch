@@ -18,11 +18,15 @@ const FooterWrapperStyled = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0 3rem;
+  gap: 0 2rem;
   padding: 0 0 1rem;
+
+  @media screen and (min-width: 425px) {
+    gap: 0 3rem;
+  }
 `;
 
-const FooterLinkStyled = styled.a`
+const SVGLINKStyled = styled.a`
   object-fit: cover;
   overflow: hidden;
   border-radius: 10%;
@@ -42,4 +46,4 @@ const LinkStyled = styled.a`
   cursor: pointer;
 `;
 
-export { FooterStyled, FooterLinkStyled, FooterWrapperStyled, LinkStyled };
+export { FooterStyled, SVGLINKStyled, FooterWrapperStyled, LinkStyled };

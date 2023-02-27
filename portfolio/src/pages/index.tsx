@@ -8,7 +8,7 @@ import Image from 'next/image';
 const IndexPage: NextPage<{}> = ({}) => {
   return (
     <MainArticle>
-      <Section sectionId="about-me-section">
+      <Section sectionId="about-me-section" sectionWidth="100vw">
         <h2>hi, I am Tymoteusz Głuch.</h2>
         <strong>
           <p>I work as a front-end developer</p>
