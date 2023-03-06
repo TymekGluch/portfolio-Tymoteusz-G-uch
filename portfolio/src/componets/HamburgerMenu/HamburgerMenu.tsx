@@ -16,42 +16,27 @@ import {
 
 type HamburgerMenuProps = {
   children: React.ReactNode;
+  handleClick: (event: React.MouseEvent<HTMLButtonElement>) => void;
+  handleListItemClick: (event: React.MouseEvent<HTMLLIElement>) => void;
+  handleTransitionEndMenu: (event: React.TransitionEvent<HTMLUListElement>) => void;
+  isShow: boolean;
+  isActive: boolean;
 };
 
-const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ children }) => {
-  const countOfMenuTogglesRef = React.useRef<number>(0);
-
-  const [isAcitve, setIsAcitve] = React.useState<boolean>(false);
-  const [isShow, setIsShow] = React.useState<boolean>(false);
-
+const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
+  children,
+  handleClick,
+  handleTransitionEndMenu,
+  handleListItemClick,
+  isShow,
+  isActive,
+}) => {
   const { isDarkTheme, setIsDarkTheme } = React.useContext(ThemeContext);
-
-  const handleClickButton = ({ currentTarget }: React.MouseEvent<HTMLButtonElement>): void => {
-    if (currentTarget.getAttribute('aria-expanded') === 'true') {
-      setIsAcitve(false);
-    } else {
-      setIsShow(true);
-      countOfMenuTogglesRef.current = countOfMenuTogglesRef.current + 1;
-    }
-  };
-
-  const handleTransitionEndMenu = (): void => {
-    if (!isAcitve) {
-      setIsShow(false);
-    }
-  };
-
-  React.useEffect(() => {
-    if (isShow) {
-      setIsAcitve(true);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [countOfMenuTogglesRef.current]);
 
   return (
     <HamburgerMenuStyled>
       <HamburgerButtonStyled
-        onClick={handleClickButton}
+        onClick={handleClick}
         aria-label={isShow ? 'Close the menu' : 'Open the menu'}
         aria-expanded={isShow ? 'true' : 'false'}
         aria-haspopup="true"
@@ -67,11 +52,11 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ children }) => {
         role="menu"
         aria-labelledby="menubutton"
         aria-hidden={!isShow ? 'true' : 'false'}
-        isOpen={isAcitve}
+        isOpen={isActive}
         isShow={isShow}
         onTransitionEnd={handleTransitionEndMenu}
       >
-        <HamburgerListButtonWrapperStyled role="none">
+        <HamburgerListButtonWrapperStyled onClick={handleListItemClick} role="none">
           <Switch isChecked={isDarkTheme} handleChange={() => setIsDarkTheme(!isDarkTheme)}>
             <ThemeSVGStyled
               aria-hidden="true"
@@ -96,7 +81,9 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ children }) => {
         </HamburgerListButtonWrapperStyled>
 
         {React.Children.map(children, (child) => (
-          <HamburgerListItemStyled role="none">{child}</HamburgerListItemStyled>
+          <HamburgerListItemStyled onClick={handleListItemClick} role="none">
+            {child}
+          </HamburgerListItemStyled>
         ))}
       </HamburgerListStyled>
     </HamburgerMenuStyled>

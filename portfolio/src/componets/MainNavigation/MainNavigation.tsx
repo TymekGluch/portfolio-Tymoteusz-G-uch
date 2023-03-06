@@ -1,30 +1,66 @@
+import { useOnClickOutsideEffect } from '@/hooks';
 import Link from 'next/link';
 import React from 'react';
 import { HamburgerMenu } from '../HamburgerMenu';
 import { MainHeadingStyled, MainNavigationStyled } from './MainNavigation.styled';
+import { NavigationListItems } from './MainNavigationData';
 
-const MainNavigation = () => (
-  <MainNavigationStyled>
-    <MainHeadingStyled>TG</MainHeadingStyled>
+const MainNavigation = () => {
+  const navigationRef = React.useRef<HTMLDivElement>(null);
 
-    <HamburgerMenu>
-      <a href="/#about-me-section" role="menuitem">
-        About me
-      </a>
+  const countOfMenuTogglesRef = React.useRef<number>(0); //important!!!
 
-      <a href="/#technologies-section" role="menuitem">
-        Technolgies
-      </a>
+  const [isActive, setIsActive] = React.useState<boolean>(false);
+  const [isShow, setIsShow] = React.useState<boolean>(false);
 
-      <a href="/" role="menuitem">
-        My Work
-      </a>
+  const handleClickButton = ({ currentTarget }: React.MouseEvent<HTMLButtonElement>): void => {
+    if (currentTarget.getAttribute('aria-expanded') === 'true') {
+      setIsActive(false);
+    } else {
+      setIsShow(true);
+      countOfMenuTogglesRef.current = countOfMenuTogglesRef.current + 1;
+    }
+  };
 
-      <a href="/" role="menuitem">
-        Contact
-      </a>
-    </HamburgerMenu>
-  </MainNavigationStyled>
-);
+  const handleTransitionEndMenu = (): void => {
+    if (!isActive) {
+      setIsShow(false);
+    }
+  };
+
+  useOnClickOutsideEffect(navigationRef, () => {
+    if (isActive) {
+      setIsActive(false);
+      console.log('dupa');
+    }
+  });
+
+  React.useEffect(() => {
+    if (isShow) {
+      setIsActive(true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [countOfMenuTogglesRef.current]);
+
+  return (
+    <MainNavigationStyled ref={navigationRef}>
+      <MainHeadingStyled>TG</MainHeadingStyled>
+
+      <HamburgerMenu
+        handleClick={handleClickButton}
+        isShow={isShow}
+        isActive={isActive}
+        handleTransitionEndMenu={handleTransitionEndMenu}
+        handleListItemClick={() => setIsActive(false)}
+      >
+        {NavigationListItems.map((item) => (
+          <Link key={item.TEXT} href={item.LINK} role="menuitem">
+            {item.TEXT}
+          </Link>
+        ))}
+      </HamburgerMenu>
+    </MainNavigationStyled>
+  );
+};
 
 export { MainNavigation };
