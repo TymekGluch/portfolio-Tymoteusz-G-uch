@@ -40,6 +40,11 @@ export const SwitchLabelStyled = styled.label`
     opacity: 50%;
   }
 
+  &:focus {
+    cursor: pointer;
+    opacity: 50%;
+  }
+
   ${SwitchInputStyled}:checked + ${SwitchChildrenWrapperStyled} {
     transform: translateX(2rem);
   }

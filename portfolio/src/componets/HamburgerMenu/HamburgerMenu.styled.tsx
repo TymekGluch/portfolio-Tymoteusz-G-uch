@@ -101,6 +101,10 @@ export const HamburgerListButtonWrapperStyled = styled.li`
   align-items: center;
   padding: 1.5rem 0;
 
+  &:focus-within {
+    opacity: 50%;
+  }
+
   @media screen and (min-width: 1024px) {
     padding: 0 5rem 0 0;
     order: 4;

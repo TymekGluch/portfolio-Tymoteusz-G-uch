@@ -23,14 +23,6 @@ const Footer: React.FC<FooterProps> = () => {
 
       <FooterWrapperStyled>
         <LinkStyled href="/">
-          <Image src="/icons/PrivacyPolicy.svg" alt="cookies" width={20} height={20} />
-
-          <strong>
-            <p>Privacy policy</p>
-          </strong>
-        </LinkStyled>
-
-        <LinkStyled href="/">
           <Image src="/icons/cookies.svg" alt="cookies" width={20} height={20} />
 
           <strong>
