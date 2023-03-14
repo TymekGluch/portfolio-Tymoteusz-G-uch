@@ -1,5 +1,6 @@
 import { CircleKnownTechnologies } from '@/componets/CircleKnownTechnologies';
 import { MainArticle } from '@/componets/MainArticle';
+import { MyWorkSection } from '@/componets/MyWorkSection';
 import { Section } from '@/componets/Section';
 import { KNOWN_TECHNOLOGIES } from '@/consts';
 import { NextPage } from 'next';
@@ -27,6 +28,8 @@ const IndexPage: NextPage<{}> = ({}) => {
           ></Image>
         ))}
       </CircleKnownTechnologies>
+
+      <MyWorkSection />
     </MainArticle>
   );
 };

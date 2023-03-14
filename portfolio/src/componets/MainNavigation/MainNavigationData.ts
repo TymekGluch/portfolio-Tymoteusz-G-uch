@@ -11,7 +11,7 @@ const NavigationListItems = [
 
   {
     LINK: '/',
-    TEXT: 'My Work',
+    TEXT: 'My work',
   },
 
   {

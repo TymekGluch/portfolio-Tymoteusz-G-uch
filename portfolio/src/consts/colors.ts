@@ -2,6 +2,8 @@ const COLORS = {
   BACKGROUND_COLOR: '#ffffff',
   TEXT_COLOR: '#0c0a1d',
   SECONDARY_TEXT_COLOR: '#ffffff',
+  // THIRD_RATE_TEXT_COLOR: '#5AF2B5',
+  THIRD_RATE_TEXT_COLOR: '#d7fffa',
   PRIMARY_ITEM_COLOR: '#4c35af',
   SECONDARY_ITEM_COLOR: '#161425',
 } as const;
@@ -11,6 +13,7 @@ const DARK_THEME_COLORS = {
   TEXT_COLOR: '#ffffff',
   PRIMARY_ITEM_COLOR: '#4c35af',
   SECONDARY_TEXT_COLOR: '#ffffff',
+  THIRD_RATE_TEXT_COLOR: '#ffffff',
   SECONDARY_ITEM_COLOR: '#161425',
 } as const;
 
