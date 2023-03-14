@@ -31,7 +31,6 @@ const MainNavigation = () => {
   useOnClickOutsideEffect(navigationRef, () => {
     if (isActive) {
       setIsActive(false);
-      console.log('dupa');
     }
   });
 

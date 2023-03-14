@@ -56,7 +56,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({
         isShow={isShow}
         onTransitionEnd={handleTransitionEndMenu}
       >
-        <HamburgerListButtonWrapperStyled onClick={handleListItemClick} role="none">
+        <HamburgerListButtonWrapperStyled role="none">
           <Switch isChecked={isDarkTheme} handleChange={() => setIsDarkTheme(!isDarkTheme)}>
             <ThemeSVGStyled
               aria-hidden="true"

@@ -1,4 +1,5 @@
 import { COLORS } from '@/consts';
+import { defaultTheme } from '@/providers';
 import styled from 'styled-components';
 
 export const HamburgerMenuStyled = styled.nav`
@@ -128,13 +129,13 @@ export const HamburgerListItemStyled = styled.li`
     text-decoration: none;
 
     &:hover {
-      background-color: ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
-      color: ${({ theme }) => theme.SECONDARY_TEXT_COLOR};
+      color: ${({ theme }) => (theme as typeof defaultTheme).PRIMARY_ITEM_COLOR};
+      text-decoration: underline;
     }
 
     &:active {
-      background-color: ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
-      color: ${({ theme }) => theme.SECONDARY_TEXT_COLOR};
+      color: ${({ theme }) => (theme as typeof defaultTheme).PRIMARY_ITEM_COLOR};
+      text-decoration: underline;
     }
   }
 
