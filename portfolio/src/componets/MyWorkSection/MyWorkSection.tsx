@@ -7,21 +7,31 @@ import {
   MyWorkCardStyled,
   MyWorkCardTextStyled,
   MyWorkHeadingStyled,
+  MyWorkImageWrapperStyled,
   MyWorkSectionStyled,
   WrapperStyled,
 } from './MyWorkSection.styled';
 import { MyWorkSectionData } from './MyWorkSectionData';
 
-type MyWorkSectionProps = {};
+const MyWorkSection: React.FC = () => {
+  const handleCLick: (event: React.MouseEvent<HTMLAnchorElement>) => void = (event) => {
+    event.preventDefault();
+  };
 
-const MyWorkSection: React.FC<MyWorkSectionProps> = ({}) => {
   return (
     <MyWorkSectionStyled>
       <MyWorkHeadingStyled>My Work</MyWorkHeadingStyled>
 
       <MyWorkCardContainerStyled>
         {MyWorkSectionData.map((card) => (
-          <MyWorkCardLinkStyled key={card.TITLE} href={card.LINK}>
+          <MyWorkCardLinkStyled
+            key={card.TITLE}
+            href={card.LINK}
+            target="_blank"
+            rel="noopener noreferrer"
+            isInProgress={card.IS_IN_PEROGRES}
+            onClick={(event) => card.IS_IN_PEROGRES && handleCLick(event)}
+          >
             <WrapperStyled />
 
             <MyWorkCardStyled>
@@ -29,7 +39,9 @@ const MyWorkSection: React.FC<MyWorkSectionProps> = ({}) => {
 
               <MyWorkCardTextStyled>{card.TEXT}</MyWorkCardTextStyled>
 
-              <MyWorkCardImageStyled src={card.IMAGE}></MyWorkCardImageStyled>
+              <MyWorkImageWrapperStyled isInProgress={card.IS_IN_PEROGRES}>
+                <MyWorkCardImageStyled src={card.IMAGE} />
+              </MyWorkImageWrapperStyled>
             </MyWorkCardStyled>
           </MyWorkCardLinkStyled>
         ))}
