@@ -67,7 +67,23 @@ const MyWorkCardImageStyled = styled.img`
   width: 220px;
   height: 180px;
   object-fit: cover;
-  overflow-y: scroll;
+`;
+
+const MyWorkImageWrapperStyled = styled.div<{ isInProgress: boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &::after {
+    position: absolute;
+    content: 'In progress';
+    display: ${({ isInProgress }) => (isInProgress ? 'flex' : 'none')};
+    color: transparent;
+    font-weight: 600;
+    padding: 0.5rem;
+    border-radius: 24px;
+    transition: color 200ms linear, background-color 200ms linear;
+  }
 `;
 
 const WrapperStyled = styled.div`
@@ -81,11 +97,11 @@ const WrapperStyled = styled.div`
   z-index: 1;
 `;
 
-const MyWorkCardLinkStyled = styled.a`
+const MyWorkCardLinkStyled = styled.a<{ isInProgress: boolean }>`
   display: flex;
   justify-content: center;
   align-items: center;
-  cursor: pointer;
+  cursor: ${({ isInProgress }) => (isInProgress ? 'not-allowed' : 'pointer')};
   text-decoration: none;
   width: 19.25rem;
   height: 28.25rem;
@@ -111,6 +127,14 @@ const MyWorkCardLinkStyled = styled.a`
       width: 100%;
     }
   }
+
+  &:hover ${MyWorkImageWrapperStyled}, &:focus ${MyWorkImageWrapperStyled} {
+    &::after {
+      color: ${({ theme }) => (theme as typeof defaultTheme).SECONDARY_TEXT_COLOR};
+      background-color: ${({ theme }) => (theme as typeof defaultTheme).PRIMARY_ITEM_COLOR};
+      border: solid 1px ${({ theme }) => (theme as typeof defaultTheme).SECONDARY_TEXT_COLOR};
+    }
+  }
 `;
 
 export {
@@ -122,5 +146,6 @@ export {
   MyWorkCardTextStyled,
   MyWorkCardImageStyled,
   MyWorkCardNameStyled,
+  MyWorkImageWrapperStyled,
   WrapperStyled,
 };
