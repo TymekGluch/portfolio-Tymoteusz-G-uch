@@ -24,6 +24,15 @@ const GlobalStyle = createGlobalStyle`
         height: 100%;
         font-family: Montserrat;
     }
+
+    @media (prefers-reduced-motion) {
+        *,
+        *::after,
+        *::before {
+            animation: none !important;
+            transition: none !important;
+        }
+    }
 `;
 
 export default GlobalStyle;
