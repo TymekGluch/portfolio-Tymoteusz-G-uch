@@ -1,3 +1,4 @@
+import { defaultTheme } from '@/providers';
 import styled from 'styled-components';
 
 const FooterStyled = styled.footer`
@@ -44,6 +45,17 @@ const LinkStyled = styled.a`
   text-decoration: none;
   color: ${({ theme }) => theme.SECONDARY_TEXT_COLOR};
   cursor: pointer;
+
+  &::after {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+  }
+
+  &:hover,
+  &:focus {
+  }
 `;
 
 export { FooterStyled, SVGLINKStyled, FooterWrapperStyled, LinkStyled };

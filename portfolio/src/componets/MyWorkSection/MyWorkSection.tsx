@@ -19,7 +19,7 @@ const MyWorkSection: React.FC = () => {
   };
 
   return (
-    <MyWorkSectionStyled>
+    <MyWorkSectionStyled id="my-work-section">
       <MyWorkHeadingStyled>My Work</MyWorkHeadingStyled>
 
       <MyWorkCardContainerStyled>

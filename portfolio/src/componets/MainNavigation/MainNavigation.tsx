@@ -43,7 +43,7 @@ const MainNavigation = () => {
 
   return (
     <MainNavigationStyled ref={navigationRef}>
-      <MainHeadingStyled>TG</MainHeadingStyled>
+      <MainHeadingStyled href="/">TG</MainHeadingStyled>
 
       <HamburgerMenu
         handleClick={handleClickButton}
@@ -53,9 +53,9 @@ const MainNavigation = () => {
         handleListItemClick={() => setIsActive(false)}
       >
         {NavigationListItems.map((item) => (
-          <Link key={item.TEXT} href={item.LINK} role="menuitem">
+          <a key={item.TEXT} href={item.LINK} role="menuitem">
             {item.TEXT}
-          </Link>
+          </a>
         ))}
       </HamburgerMenu>
     </MainNavigationStyled>

@@ -17,6 +17,7 @@ export const SectionStyled = styled.section<{
   justify-content: space-evenly;
   padding: 3rem 1rem;
   margin: 4rem 0 0 0;
+  scroll-margin-top: 3.5rem;
   border-top: ${({ border }) => border};
   border-bottom: ${({ border }) => border};
   border-radius: ${({ borderRadius }) => borderRadius};

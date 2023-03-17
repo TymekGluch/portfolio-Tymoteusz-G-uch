@@ -1,3 +1,4 @@
+import { defaultTheme } from '@/providers';
 import styled from 'styled-components';
 
 export const SwitchInputStyled = styled.input`
@@ -20,7 +21,8 @@ export const SwitchChildrenWrapperStyled = styled.div`
   align-items: center;
   background-color: ${({ theme }) => theme.BACKGROUND_COLOR};
   overflow: hidden;
-  transition: transform 200ms;
+  transform: translateX(-2px);
+  transition: transform 200ms ease-in-out;
   position: relative;
 `;
 
@@ -28,21 +30,20 @@ export const SwitchLabelStyled = styled.label`
   width: 4rem;
   height: 2rem;
   border-radius: 2rem;
-  border: none;
+  border: 2px solid transparent;
   background-color: ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
   display: flex;
   align-items: center;
   overflow: hidden;
   padding: 0.15rem;
+  transition: border 200ms ease-in-out;
+  cursor: pointer;
 
   &:hover {
-    cursor: pointer;
-    opacity: 50%;
+    border: solid 2px ${({ theme }) => (theme as typeof defaultTheme).TEXT_COLOR};
   }
-
   &:focus {
-    cursor: pointer;
-    opacity: 50%;
+    border: solid 2px ${({ theme }) => (theme as typeof defaultTheme).TEXT_COLOR};
   }
 
   ${SwitchInputStyled}:checked + ${SwitchChildrenWrapperStyled} {

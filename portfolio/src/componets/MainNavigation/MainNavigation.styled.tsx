@@ -16,8 +16,11 @@ export const MainNavigationStyled = styled.header`
   }
 `;
 
-export const MainHeadingStyled = styled.h1`
+export const MainHeadingStyled = styled.a`
   color: ${({ theme }) => theme.TEXT_COLOR};
   font-size: 2rem;
+  font-weight: 700;
   padding: 0 2rem;
+  text-decoration: none;
+  cursor: pointer;
 `;

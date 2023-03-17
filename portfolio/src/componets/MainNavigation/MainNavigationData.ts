@@ -5,17 +5,17 @@ const NavigationListItems = [
   },
 
   {
-    LINK: '/#technologies-section',
+    LINK: '/#technologies-i-work',
     TEXT: 'Technolgies',
   },
 
   {
-    LINK: '/',
+    LINK: '/#my-work-section',
     TEXT: 'My work',
   },
 
   {
-    LINK: '/',
+    LINK: '/#main-footer',
     TEXT: 'Contact',
   },
 ];
