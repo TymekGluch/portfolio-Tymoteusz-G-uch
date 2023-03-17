@@ -4,10 +4,11 @@ import styled from 'styled-components';
 const FooterStyled = styled.footer`
   position: static;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0 5rem;
+  gap: 2rem 5rem;
   width: 100vw;
   min-height: 6rem;
   height: fit-content;
@@ -15,11 +16,17 @@ const FooterStyled = styled.footer`
   background-color: ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
 `;
 
+const HeadingStyled = styled.h2`
+  color: ${({ theme }) => (theme as typeof defaultTheme).SECONDARY_TEXT_COLOR};
+  text-align: center;
+  font-size: 18.72px;
+`;
+
 const FooterWrapperStyled = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 0 2rem;
+  gap: 0 1rem;
   padding: 0 0 1rem;
 
   @media screen and (min-width: 425px) {
@@ -27,35 +34,48 @@ const FooterWrapperStyled = styled.div`
   }
 `;
 
-const SVGLINKStyled = styled.a`
-  object-fit: cover;
-  overflow: hidden;
-  border-radius: 10%;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-`;
-
-const LinkStyled = styled.a`
+const SVGWrapperStyled = styled.div`
+  position: relative;
   display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 0.5rem;
-  padding: 1rem;
-  font-size: 20px;
-  text-decoration: none;
-  color: ${({ theme }) => theme.SECONDARY_TEXT_COLOR};
-  cursor: pointer;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  overflow: hidden;
 
   &::after {
     content: '';
-    width: 100%;
-    height: 2px;
-    background-color: #fff;
+    position: absolute;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background-color: ${({ theme }) => (theme as typeof defaultTheme).SECONDARY_TEXT_COLOR};
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 200ms ease-in-out;
   }
 
   &:hover,
   &:focus {
+    &::after {
+      transform: scale(1);
+    }
   }
 `;
 
-export { FooterStyled, SVGLINKStyled, FooterWrapperStyled, LinkStyled };
+const SVGLINKStyled = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  border: solid 2px ${({ theme }) => (theme as typeof defaultTheme).PRIMARY_ITEM_COLOR};
+  z-index: 1;
+`;
+
+export { FooterStyled, SVGLINKStyled, FooterWrapperStyled, HeadingStyled, SVGWrapperStyled };

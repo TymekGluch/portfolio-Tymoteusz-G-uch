@@ -12,7 +12,7 @@ type SwitchProps = {
 
 const Switch: React.FC<SwitchProps> = ({ children, isChecked, handleChange }) => {
   return (
-    <SwitchLabelStyled role="menuitemcheckbox">
+    <SwitchLabelStyled role="menuitemcheckbox" title="theme-switch">
       <SwitchInputStyled
         role="switch"
         type="checkbox"

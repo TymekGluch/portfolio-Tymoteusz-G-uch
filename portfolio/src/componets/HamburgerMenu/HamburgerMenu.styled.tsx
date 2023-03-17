@@ -128,21 +128,22 @@ export const HamburgerListItemStyled = styled.li`
     text-decoration: none;
     color: ${({ theme }) => theme.TEXT_COLOR};
 
-    &::after {
-      content: '';
-      width: 92%;
-      height: 2px;
-      background-color: ${({ theme }) => (theme as typeof defaultTheme).PRIMARY_ITEM_COLOR};
-      transform: scaleX(0);
-      transition: transform 200ms ease-in-out, color 200ms ease-in-out;
-    }
-
-    &:hover,
-    &:focus {
+    &:hover {
       color: ${({ theme }) => (theme as typeof defaultTheme).PRIMARY_ITEM_COLOR};
 
       &::after {
         transform: scaleX(100%);
+      }
+    }
+
+    @media screen and (min-width: 1024px) {
+      &::after {
+        content: '';
+        width: 92%;
+        height: 2px;
+        background-color: ${({ theme }) => (theme as typeof defaultTheme).PRIMARY_ITEM_COLOR};
+        transform: scaleX(0);
+        transition: transform 200ms ease-in-out, color 200ms ease-in-out;
       }
     }
   }

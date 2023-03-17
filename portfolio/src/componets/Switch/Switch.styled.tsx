@@ -36,14 +36,10 @@ export const SwitchLabelStyled = styled.label`
   align-items: center;
   overflow: hidden;
   padding: 0.15rem;
-  transition: border 200ms ease-in-out;
   cursor: pointer;
 
   &:hover {
-    border: solid 2px ${({ theme }) => (theme as typeof defaultTheme).TEXT_COLOR};
-  }
-  &:focus {
-    border: solid 2px ${({ theme }) => (theme as typeof defaultTheme).TEXT_COLOR};
+    border: 2px solid ${({ theme }) => (theme as typeof defaultTheme).TEXT_COLOR};
   }
 
   ${SwitchInputStyled}:checked + ${SwitchChildrenWrapperStyled} {
