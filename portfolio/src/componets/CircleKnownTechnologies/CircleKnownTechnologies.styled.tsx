@@ -44,4 +44,6 @@ const HeadindStyled = styled.h2`
   color: ${({ theme }) => theme.TEXT_COLOR};
 `;
 
-export { CircleKnownTechnologiesStyled, HeadindStyled };
+const WrapperStyled = styled.div``;
+
+export { CircleKnownTechnologiesStyled, HeadindStyled, WrapperStyled };

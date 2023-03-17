@@ -7,7 +7,6 @@ export const HamburgerMenuStyled = styled.nav`
   justify-content: space-around;
   width: 3rem;
   height: 3rem;
-  cursor: pointer;
 
   @media screen and (min-width: 1024px) {
     width: fit-content;
@@ -120,22 +119,31 @@ export const HamburgerListItemStyled = styled.li`
   font-size: 1.5rem;
 
   a {
-    height: 100%;
-    width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: ${({ theme }) => theme.TEXT_COLOR};
+    height: 100%;
+    width: 100%;
     text-decoration: none;
+    color: ${({ theme }) => theme.TEXT_COLOR};
 
-    &:hover {
-      color: ${({ theme }) => (theme as typeof defaultTheme).PRIMARY_ITEM_COLOR};
-      text-decoration: underline;
+    &::after {
+      content: '';
+      width: 92%;
+      height: 2px;
+      background-color: ${({ theme }) => (theme as typeof defaultTheme).PRIMARY_ITEM_COLOR};
+      transform: scaleX(0);
+      transition: transform 200ms ease-in-out, color 200ms ease-in-out;
     }
 
-    &:active {
+    &:hover,
+    &:focus {
       color: ${({ theme }) => (theme as typeof defaultTheme).PRIMARY_ITEM_COLOR};
-      text-decoration: underline;
+
+      &::after {
+        transform: scaleX(100%);
+      }
     }
   }
 

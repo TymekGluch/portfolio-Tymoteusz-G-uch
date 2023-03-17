@@ -9,6 +9,7 @@ const MyWorkSectionStyled = styled.section`
   gap: 6rem;
   width: 100vw;
   margin: 6rem 0;
+  scroll-margin: 6rem;
 `;
 
 const MyWorkHeadingStyled = styled.h2`
@@ -17,10 +18,15 @@ const MyWorkHeadingStyled = styled.h2`
 
 const MyWorkCardContainerStyled = styled.div`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
   gap: 3rem;
   flex-wrap: wrap;
+  padding: 0 1rem;
+
+  @media screen and (min-width: 1023px) {
+    width: 700px;
+  }
 `;
 
 const MyWorkCardStyled = styled.section`

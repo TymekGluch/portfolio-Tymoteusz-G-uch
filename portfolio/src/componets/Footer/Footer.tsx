@@ -7,7 +7,7 @@ type FooterProps = {};
 
 const Footer: React.FC<FooterProps> = () => {
   return (
-    <FooterStyled>
+    <FooterStyled id="main-footer">
       <FooterWrapperStyled>
         {FooterIcon.map((icon) => (
           <SVGLINKStyled
