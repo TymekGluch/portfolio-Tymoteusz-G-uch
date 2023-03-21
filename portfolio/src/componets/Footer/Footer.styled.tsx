@@ -2,7 +2,6 @@ import { defaultTheme } from '@/providers';
 import styled from 'styled-components';
 
 const FooterStyled = styled.footer`
-  position: static;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -12,8 +11,9 @@ const FooterStyled = styled.footer`
   width: 100vw;
   min-height: 6rem;
   height: fit-content;
-  padding: 3rem 2rem;
+  padding: 2rem 2rem;
   background-color: ${({ theme }) => theme.PRIMARY_ITEM_COLOR};
+  box-shadow: 0 100px 0 0 #4c35af;
 `;
 
 const HeadingStyled = styled.h2`

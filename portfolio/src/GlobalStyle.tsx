@@ -7,7 +7,6 @@ const GlobalStyle = createGlobalStyle`
     * {
         margin: 0;
         padding: 0;
-        list-style: none;
     }
 
     *,
@@ -21,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        background-color: ${({ theme }) => (theme as typeof defaultTheme).PRIMARY_ITEM_COLOR};
+        background-color: ${({ theme }) => (theme as typeof defaultTheme).BACKGROUND_COLOR};
         position: relative;
         overflow-x: hidden;
         min-height: 100vh;

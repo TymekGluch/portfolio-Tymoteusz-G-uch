@@ -24,6 +24,7 @@ export const HamburgerButtonStyled = styled.button`
   justify-content: center;
   border: none;
   background-color: transparent;
+  cursor: pointer;
 
   @media screen and (min-width: 1024px) {
     display: none;
@@ -79,6 +80,7 @@ export const HamburgerListStyled = styled.ul<{ isOpen: boolean; isShow: boolean 
   transition: transform 200ms linear;
   transform-origin: top;
   background-color: ${({ theme }) => theme.BACKGROUND_COLOR};
+  list-style: none;
 
   @media screen and (min-width: 1024px) {
     width: 100%;
