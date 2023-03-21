@@ -8,7 +8,6 @@ const MainArticleStyled = styled.article`
   width: 100vw;
   min-height: 100vh;
   height: 100%;
-  background-color: ${({ theme }) => (theme as typeof defaultTheme).BACKGROUND_COLOR};
 `;
 
 export { MainArticleStyled };
