@@ -1,5 +1,6 @@
 import Image from 'next/image';
-import React from 'react';
+import React, { useEffect } from 'react';
+import cookie from 'cookiejs';
 import {
   CookiesHeadingStyled,
   CookiesStyled,
@@ -12,19 +13,37 @@ import {
 } from './Cookies.styled';
 
 const Cookies = () => {
-  const [isOpen, setIsOpen] = React.useState<boolean>(true);
-  const [isExist, setIsExist] = React.useState<boolean>(true);
+  const [isOpen, setIsOpen] = React.useState<boolean>(false);
+  const [isExist, setIsExist] = React.useState<boolean>(false);
 
   const HandleClick = (): void => {
-    setIsOpen(false);
+    cookie.set('cookies-baner-showed', 'true', { expires: 30 });
 
-    setTimeout(() => {
-      setIsExist(false);
-    }, 200);
+    setIsOpen(false);
+    //todo: onTransitionEnd
   };
 
+  const handleTransitionEnd = (): void => {
+    isOpen && setIsExist(true);
+  };
+
+  React.useEffect(() => {
+    const isCookiesBanerShowed = cookie.get('cookies-baner-showed') === 'true';
+
+    if (!isCookiesBanerShowed) {
+      setIsExist(true);
+    }
+    console.log(cookie.get('cookies-baner-showed'), !isCookiesBanerShowed);
+  }, []);
+
+  React.useEffect(() => {
+    if (isExist) {
+      setIsOpen(true);
+    }
+  }, [isExist]);
+
   return (
-    <CookiesStyled isOpen={isOpen} isExist={isExist}>
+    <CookiesStyled isOpen={isOpen} isExist={isExist} onTransitionEnd={handleTransitionEnd}>
       <CookiesHeaderStyled>
         <CookiesWrapperStyled>
           <CookiesHeadingStyled>Cookies</CookiesHeadingStyled>
