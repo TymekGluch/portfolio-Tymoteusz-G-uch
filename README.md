@@ -7,7 +7,7 @@ https://portfolio-tymoteusz-gluch.netlify.app/
 
 ## how to install
 
-2. use `git clone https://github.com/TymekGluch/portfolio-Tymoteusz-Gluch.git'.
+2. use `git clone https://github.com/TymekGluch/portfolio-Tymoteusz-Gluch.git`.
 
 3. use `npm install` with integred package.json terminal.
 
