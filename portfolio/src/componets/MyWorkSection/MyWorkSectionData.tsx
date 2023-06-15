@@ -9,8 +9,24 @@ const MyWorkSectionData = [
     IS_IN_PEROGRES: false,
   },
   {
+    TITLE: 'Imperium nieruchomości',
+    TEXT: (<>A website powered by WordPress for a estate agency, created in cooperation with the <a href="https://pro-s.net.pl/" target="_blank" rel="noopener">PRO-S agency</a>.</>),
+    IMAGE:
+      '/icons/imperium.png',
+    LINK: 'https://imperium-nieruchomosci.pl/',
+    IS_IN_PEROGRES: false,
+  },
+  {
+    TITLE: 'Wspominamy.pl',
+    TEXT: (<>A WordPress web application for embedding multimedia galleries related to people whose time has taken us away, created in cooperation with the <a href="https://pro-s.net.pl/" target="_blank" rel="noopener">PRO-S agency</a>.</>),
+    IMAGE:
+      '/icons/wspominamy.png',
+    LINK: '/',
+    IS_IN_PEROGRES: true,
+  },
+  {
     TITLE: 'MZTS app',
-    TEXT: 'Official website powered by Next.js and TypeScript for the Masovian Sports Dance Association.',
+    TEXT: 'Official web application powered by Next.js and TypeScript for the Masovian Sports Dance Association.',
     IMAGE:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/2560px-Placeholder_view_vector.svg.png',
     LINK: '/',

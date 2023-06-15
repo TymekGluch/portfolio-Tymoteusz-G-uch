@@ -5,6 +5,7 @@ const COLORS = {
   THIRD_RATE_TEXT_COLOR: '#5AF2B5',
   PRIMARY_ITEM_COLOR: '#4c35af',
   SECONDARY_ITEM_COLOR: '#161425',
+  HOVER_LIGHT_COLOR: '#e3bebe',
 } as const;
 
 const DARK_THEME_COLORS = {
@@ -14,6 +15,7 @@ const DARK_THEME_COLORS = {
   SECONDARY_TEXT_COLOR: '#ffffff',
   THIRD_RATE_TEXT_COLOR: '#ffffff',
   SECONDARY_ITEM_COLOR: '#161425',
+  HOVER_LIGHT_COLOR: '#e3bebe',
 } as const;
 
 export { COLORS, DARK_THEME_COLORS };

@@ -52,6 +52,7 @@ const MyWorkCardNameStyled = styled.h3`
   flex-direction: column;
   color: ${({ theme }) => (theme as typeof defaultTheme).SECONDARY_TEXT_COLOR};
   gap: 0.3 rem;
+  text-align: center;
 
   &::after {
     content: '';
@@ -67,6 +68,16 @@ const MyWorkCardTextStyled = styled.p`
   color: ${({ theme }) => (theme as typeof defaultTheme).SECONDARY_TEXT_COLOR};
   text-align: center;
   font-weight: 600;
+
+  a {
+    color: ${({ theme }) => (theme as typeof defaultTheme).SECONDARY_TEXT_COLOR};
+    text-decoration: underline;
+    cursor: pointer;
+
+    &:hover {
+      color: ${({ theme }) => (theme as typeof defaultTheme).HOVER_LIGHT_COLOR};
+    }
+  }
 `;
 
 const MyWorkCardImageStyled = styled.img`
