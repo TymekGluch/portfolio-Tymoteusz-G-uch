@@ -18,7 +18,7 @@ const MyWorkSectionData = [
   },
   {
     TITLE: 'Wspominamy.pl',
-    TEXT: (<>A WordPress web application for embedding multimedia galleries related to people whose time has taken us away, created in cooperation with the <a href="https://pro-s.net.pl/" target="_blank" rel="noopener noreferrer">PRO-S agency</a>.</>),
+    TEXT: (<>A WordPress web application for embedding multimedia galleries related to people whose time has taken from us away, created in cooperation with the <a href="https://pro-s.net.pl/" target="_blank" rel="noopener noreferrer">PRO-S agency</a>.</>),
     IMAGE:
       '/icons/wspominamy.png',
     LINK: '/',
