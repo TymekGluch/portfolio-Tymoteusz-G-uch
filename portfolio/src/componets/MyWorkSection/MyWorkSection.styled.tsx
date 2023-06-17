@@ -53,6 +53,7 @@ const MyWorkCardNameStyled = styled.h3`
   color: ${({ theme }) => (theme as typeof defaultTheme).SECONDARY_TEXT_COLOR};
   gap: 0.3 rem;
   text-align: center;
+  font-size: 17px;
 
   &::after {
     content: '';
