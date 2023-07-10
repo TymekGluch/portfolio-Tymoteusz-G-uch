@@ -29,7 +29,7 @@ const MyWorkSectionData = [
     TEXT: 'Official web application powered by Next.js and TypeScript for the Masovian Sports Dance Association.',
     IMAGE:
       'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/2560px-Placeholder_view_vector.svg.png',
-    LINK: '/',
+    LINK: '/icons/mzts.png',
     IS_IN_PEROGRES: true,
   },
 ] as const;
